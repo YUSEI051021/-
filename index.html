@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CookieTutorial</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+        text-align: center;
+      }
+      input,
+      button {
+        margin-bottom: 10px;
+        display: block;
+      }
+      input[type='text'] {
+        width: 300px;
+        padding: 5px;
+        margin: 0 auto;
+      }
+      button {
+        padding: 8px 15px;
+        cursor: pointer;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CookieTutorial</h1>
+    <form>
+      <input type="text" id="cookieValue" required />
+      <button id="saveButton" type="button">保存</button>
+    </form>
+    <h2>現在保存されている Cookie の値</h2>
+    <div id="displayArea">（まだ何も保存されていません）</div>
+    <script src="script.js"></script>
+  </body>
+</html>

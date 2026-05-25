@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>明日の天気</title>
+  </head>
+  <body>
+    <h1>東京の明日の天気</h1>
+    <div id="tokyoWeather">ここに表示</div>
+    <h1>大阪の明日の天気</h1>
+    <div id="osakaWeather">ここに表示</div>
+    <h1>舞鶴の明日の天気</h1>
+    <div id="maiduruWeather">ここに表示</div>
+ 
+    <script>
+        //東京の天気
+      fetch('https://weather.tsukumijima.net/api/forecast?city=130010')
+        .then((response) => response.json())
+        .then((data) => 
+        {
+            const tomorrow = data.forecasts[1];
+            const weather = tomorrow.telop;
+            const maxTemp = tomorrow.temperature.max.celsius;
+            const minTemp = tomorrow.temperature.min.celsius;
+            const message = `${weather}（最高気温: ${maxTemp} / 最低気温: ${minTemp}）`;
+            document.getElementById('tokyoWeather').innerText = message;
+        });
+
+        //大阪の天気
+      fetch('https://weather.tsukumijima.net/api/forecast?city=270000')
+        .then((response) => response.json())
+        .then((data) => 
+        {
+            const tomorrow = data.forecasts[1];
+            const weather = tomorrow.telop;
+            const maxTemp = tomorrow.temperature.max.celsius;
+            const minTemp = tomorrow.temperature.min.celsius;
+            const message = `${weather}（最高気温: ${maxTemp} / 最低気温: ${minTemp}）`;
+            document.getElementById('osakaWeather').innerText = message;
+        });
+
+        //京都の天気
+      fetch('https://weather.tsukumijima.net/api/forecast?city=260020')
+        .then((response) => response.json())
+        .then((data) => 
+        {
+            const tomorrow = data.forecasts[1];
+            const weather = tomorrow.telop;
+            const maxTemp = tomorrow.temperature.max.celsius;
+            const minTemp = tomorrow.temperature.min.celsius;
+            const message = `${weather}（最高気温: ${maxTemp} / 最低気温: ${minTemp}）`;
+            document.getElementById('maiduruWeather').innerText = message;
+        });
+        
+    </script>
+  </body>
+</html>

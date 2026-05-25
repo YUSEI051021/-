@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>明日の天気</title>
+  </head>
+  <body>
+    <h1>東京の明日の天気</h1>
+    <div id="tokyoWeather">ここに表示</div>
+    <h1>大阪の明日の天気</h1>
+    <div id="osakaWeather">ここに表示</div>
+    <h1>舞鶴の明日の天気</h1>
+    <div id="maiduruWeather">ここに表示</div>
+ 
+    <script>
+        //東京の天気
+      fetch('https://weather.tsukumijima.net/api/forecast?city=130010')
+        .then((response) => response.json())
+        .then((data) => 
+        {
+            const tomorrowForecast1 = data.forecasts[1];
+            var message1 = tomorrowForecast1.telop;
+            var object1 = document.getElementById('tokyoWeather');
+            object1.innerText = message1;
+        });
+
+        //大阪の天気
+      fetch('https://weather.tsukumijima.net/api/forecast?city=270000')
+        .then((response) => response.json())
+        .then((data) => 
+        {
+            const tomorrowForecast2 = data.forecasts[1];
+            var message2 = tomorrowForecast2.telop;
+            var object2 = document.getElementById('osakaWeather');
+            object2.innerText = message2;
+        });
+
+        //京都の天気
+      fetch('https://weather.tsukumijima.net/api/forecast?city=260020')
+        .then((response) => response.json())
+        .then((data) => 
+        {
+            const tomorrowForecast3 = data.forecasts[1];
+            var message3 = tomorrowForecast3.telop;
+            var object3 = document.getElementById('maiduruWeather');
+            object3.innerText = message3;
+        });
+        
+    </script>
+  </body>
+</html>
