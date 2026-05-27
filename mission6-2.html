@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>
+            Todoリスト
+        </title>
+        <style>
+            body
+            {
+                font-family: sans-serif;/*フォントをゴシック体に変更*/
+                background-color: #f4f4f9;/*画面全体の背景を変更*/
+                padding: 20px;/*画面の端に20pxの余白を作成*/
+                display: flex;/*レイアウト機能(Flexbox)を有効にする*/
+                justify-content: center;/*アプリの箱(子要素)を横方向中央によせる*/
+            }
+            .container
+            {
+                background: white;/*アプリの背景を変更*/
+                padding: 20px;/*箱の内側に20pxの余白を作成*/
+                border-radius: 8px;/*角を8px丸くする*/
+                width: 400px;/*横幅を400pxに固定*/
+            }
+            h1
+            {
+                font-size: 20px;
+                margin-bottom: 20px;/*タイトルの下に20pxの隙間を作成*/
+                text-align: center;/*タイトル文字を中央揃えにする*/
+            }
+            .input-area
+            {
+                display: flex;/*レイアウト機能を有効にし、中の入力欄とボタンを横一列に並べる*/
+                gap: 10px;/*入力欄と追加ボタンの間に10pxの隙間を作成*/
+                margin-bottom: 20px;/*入力エリアの下に20pxの隙間を作成*/
+            }
+            input[type="text"]
+            {
+                flex: 1;/*横幅の余ったスペースをすべて入力欄が使用し、自動で伸びるようにする*/
+                padding: 8px;/*入力欄に余白を作成*/
+                border: 1px solid gray;/*1pxの実線で枠を描きます*/
+                border-radius: 4px;
+            }
+            button
+            {
+                padding: 8px 12px;/*ボタンの中に上下8px、左右12pxの余白を作成*/
+                background-color:cadetblue;
+                color:white;
+                border-radius: 4px;
+            }
+            ul
+            {
+                list-style: none;/*箇条書きの・を非表示*/
+                padding: 0;/*左側の余白を0にする*/
+                margin: 0;/*上下の余白を0にする*/
+            }
+            li
+            {
+                display: flex;
+                justify-content: space-between;/*タスク名を左、削除ボタンを右の両端配置*/
+                align-items: center;
+                padding: 8px;
+                border-bottom: 1px solid gray;
+            }
+            .delete-btn
+            {
+                background-color:red;
+                padding: 4px 8px;
+                font-size: 12px;
+            }
+        </style>
+    </head>
+    <body><!--この下から記入-->
+        <div class="container">
+            <h1>ToDoリスト</h1>
+
+           <div class="input-area">
+                <input type="text" id="todo-input" placeholder="新しいタスクを入力">
+                <input type="date" id="todo-date"><!--ブラウザ標準のカレンダーを取得-->
+                <select id="todo-priority"><!--ドロップダウンメニューを作成-->
+                    <option value="低">低</option>
+                    <option value="中" selected>中</option>
+                    <option value="高">高</option>
+                </select>
+                <button id="add-btn">追加</button>
+            </div>
+
+            <ul id="todo-list"></ul>
+        </div>
+
+        <script src="mission6-2.js"></script>
+    </body>
+</html>
